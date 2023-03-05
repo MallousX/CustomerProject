@@ -13,8 +13,8 @@ class Program
 
         Customer customer = new Customer
         {
-            FirstName = "James",
-            LastName = "Reeves",
+            FirstName = "james",
+            LastName = "reeves",
             Age = 38,
             Email = "truewinds@gmail.com",
             PhoneNumber = new PhoneModel("2816517827")
@@ -24,8 +24,8 @@ class Program
 
         Customer customer2 = new Customer
         {
-            FirstName = "Matt",
-            LastName = "Dove",
+            FirstName = "matt",
+            LastName = "dove",
             Age = 37,
             Email = "matt319899@gmail.com",
             PhoneNumber = new PhoneModel("2816517827")

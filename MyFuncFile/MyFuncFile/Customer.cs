@@ -20,7 +20,11 @@
         // Method to print all customer data
         public void PrintCustomerData()
         {
-            Console.WriteLine($"Name: {FirstName} {LastName}");
+            //Capitalize the first letter of the first name and last name
+            string capitalizedFirstName = FirstName?.Length > 0 ? char.ToUpper(FirstName[0]) + FirstName.Substring(1) : "";
+            string capitalizedLastName = LastName?.Length > 0 ? char.ToUpper(LastName[0]) + LastName.Substring(1) : "";
+
+            Console.WriteLine($"Name: {capitalizedFirstName} {capitalizedLastName}");
             Console.WriteLine($"Age: {Age}");
             Console.WriteLine($"Email: {Email}");
             Console.WriteLine($"Phone Number: {PhoneNumber.PhoneNumber}");
