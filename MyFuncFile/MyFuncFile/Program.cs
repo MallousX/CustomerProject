@@ -5,10 +5,7 @@ class Program
     static void Main(string[] args)
     {
         //var blah = new Funcs();
-
-
         //blah.GetformattedDate();
-
         //Console.WriteLine(blah.GetformattedDate());
 
         Customer customer = new Customer
@@ -20,8 +17,6 @@ class Program
             PhoneNumber = new PhoneModel("2816517827")
         };
 
-        customer.PrintCustomerData();
-
         Customer customer2 = new Customer
         {
             FirstName = "matt",
@@ -30,6 +25,10 @@ class Program
             Email = "matt319899@gmail.com",
             PhoneNumber = new PhoneModel("2816517827")
         };
+
+
+        // Print Customers
+        customer.PrintCustomerData();
         customer2.PrintCustomerData();
     }
 }
