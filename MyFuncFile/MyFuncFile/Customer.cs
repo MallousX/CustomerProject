@@ -28,9 +28,9 @@
 
         // TODO:
         // Create separate functions to do these things:
-        // Change a last name.
+        // Change a last name. (Done 3-6-2023 (At Work))
         // Capitalize the first letter of a string (like a name)
-        // Validate age is 18 or greater (input int, output bool)
+        // Validate age is 18 or greater (input int, output bool) (Done? 3-6-2023 (AT WORK))
 
         public string TitleCase(string input)
         {
