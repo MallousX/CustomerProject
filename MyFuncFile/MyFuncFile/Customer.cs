@@ -32,18 +32,33 @@
         // Capitalize the first letter of a string (like a name)
         // Validate age is 18 or greater (input int, output bool) (Done? 3-6-2023 (AT WORK))
 
-        public string TitleCase(string input)
+        public void TitleCase(string input)
         {
-            // Do the thing
+            string[] names = input.ToLower().Split(' ');
 
+            // Capitalize the first letter of each word
+            for (int i = 0; i < names.Length; i++)
+            {
+                if (names[i].Length > 0)
+                {
+                    names[i] = char.ToUpper(names[i][0]) + names[i].Substring(1);
+                }
+            }
+            string output = string.Join(" ", names);
             // Return the thing
-            return "";
         }
 
-        public void ValidateAge(int age)
+        public bool IscustomerOver18 (int age)
         {
-            // Age check if age >= 18 { set age = age or something}
-
+            if (age >= 18)
+            {
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("USer is not at least 18 years of age");
+                return false;
+            }
             // else "Customer has to be at least 18 years of age"
 
             // Note, this could instead be used to return a bool if age is good/bad

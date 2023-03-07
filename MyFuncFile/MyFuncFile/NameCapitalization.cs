@@ -17,12 +17,12 @@ namespace MyFuncFile
 
 
         //Functions
-        public string CapitalizeNames(string firstName, string LastName)
+        public string CapitalizeNames(string FirstName, string LastName)
         {
 
             // Capitalize first letter of first name
-            char firstChar = char.ToUpper(firstName[0]);
-            string capitalizedFirstName = firstChar + firstName.Substring(1);
+            char firstChar = char.ToUpper(FirstName[0]);
+            string capitalizedFirstName = firstChar + FirstName.Substring(1);
 
             // Capitalize first letter of last name
             firstChar = char.ToUpper(LastName[0]);
