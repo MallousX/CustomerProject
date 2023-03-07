@@ -40,7 +40,8 @@
             }
             else
             {
-                Console.WriteLine("USer is not at least 18 years of age");
+                Console.WriteLine("User is not at least 18 years of age");
+                throw new ArgumentException("User is not at least 18 years of age");
             }
         }
 
