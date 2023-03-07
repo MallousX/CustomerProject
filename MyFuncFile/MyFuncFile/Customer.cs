@@ -15,64 +15,39 @@
         // Constructor
         public Customer(string firstName, string lastName, string email, PhoneModel? phoneNumber, int age)
         {
-            FirstName = firstName; // Use PhoneModel as example
-            LastName = lastName; // Use Phone Model as example
+            FirstName = FormatName(firstName);
+            LastName = FormatName(lastName);
             Email = email;
             PhoneNumber = phoneNumber;
-            Age = age; 
+            IsCustomerLegal(age); 
             CreateDT = DateTime.Now;
         }
 
 
         //Functions
-
-        // TODO:
-        // Create separate functions to do these things:
-        // Change a last name. (Done 3-6-2023 (At Work))
-        // Capitalize the first letter of a string (like a name)
-        // Validate age is 18 or greater (input int, output bool) (Done? 3-6-2023 (AT WORK))
-
-        public void TitleCase(string input)
+        public string FormatName(string input)
         {
-            string[] names = input.ToLower().Split(' ');
-
             // Capitalize the first letter of each word
-            for (int i = 0; i < names.Length; i++)
-            {
-                if (names[i].Length > 0)
-                {
-                    names[i] = char.ToUpper(names[i][0]) + names[i].Substring(1);
-                }
-            }
-            string output = string.Join(" ", names);
-            // Return the thing
+            return char.ToUpper(input[0]) + input.Substring(1);
         }
 
-        public bool IscustomerOver18 (int age)
+        public void IsCustomerLegal (int age)
         {
             if (age >= 18)
             {
-                return true;
+                // set the age here if valid
+                Age = age;
             }
             else
             {
                 Console.WriteLine("USer is not at least 18 years of age");
-                return false;
             }
-            // else "Customer has to be at least 18 years of age"
-
-            // Note, this could instead be used to return a bool if age is good/bad
-            // Then you'd set the age elsewhere, idk, up to you.
         }
 
         // Method to print all customer data
         public void PrintCustomerData()
         {
-            //Capitalize the first letter of the first name and last name
-            string capitalizedFirstName = FirstName?.Length > 0 ? char.ToUpper(FirstName[0]) + FirstName.Substring(1) : "";
-            string capitalizedLastName = LastName?.Length > 0 ? char.ToUpper(LastName[0]) + LastName.Substring(1) : "";
-
-            //Console.WriteLine($"Name: {capitalizedFirstName} {capitalizedLastName}");
+            Console.WriteLine($"Name: {FirstName} {LastName}");
             Console.WriteLine($"Age: {Age}");
             Console.WriteLine($"Email: {Email}");
             Console.WriteLine($"Phone Number: {PhoneNumber.PhoneNumber}");

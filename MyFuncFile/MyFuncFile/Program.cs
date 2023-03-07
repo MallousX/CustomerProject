@@ -8,27 +8,29 @@ class Program
         //blah.GetformattedDate();
         //Console.WriteLine(blah.GetformattedDate());
 
-        Customer customer = new Customer
-        {
-            FirstName = "james",
-            LastName = "reeves",
-            Age = 38,
-            Email = "truewinds@gmail.com",
-            PhoneNumber = new PhoneModel("2816517827")
-        };
+        //Customer customer = new Customer
+        //{
+        //    FirstName = "james",
+        //    LastName = "reeves",
+        //    Age = 38,
+        //    Email = "truewinds@gmail.com",
+        //    PhoneNumber = new PhoneModel("2816517827")
+        //};
 
-        Customer customer2 = new Customer
-        {
-            FirstName = "matt",
-            LastName = "dove",
-            Age = 37,
-            Email = "matt319899@gmail.com",
-            PhoneNumber = new PhoneModel("2816517827")
-        };
+        //Customer customer2 = new Customer
+        //{
+        //    FirstName = "matt",
+        //    LastName = "dove",
+        //    Age = 37,
+        //    Email = "matt319899@gmail.com",
+        //    PhoneNumber = new PhoneModel("2816517827")
+        //};
+
+        Customer mallous = new Customer("james", "reeves", "truewinds@gmail.com", new PhoneModel("2816517827"), 12);
 
 
         // Print Customers
-        customer.PrintCustomerData();
-        customer2.PrintCustomerData();
+        mallous.PrintCustomerData();
+        //customer2.PrintCustomerData();
     }
 }

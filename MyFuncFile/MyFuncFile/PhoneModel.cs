@@ -8,7 +8,7 @@
         //Constructor
         public PhoneModel(string inputPhoneNumber)
         {
-            PhoneNumber=FormatPhoneNumber(inputPhoneNumber);
+            PhoneNumber = FormatPhoneNumber(inputPhoneNumber);
         }
 
         //Functions
