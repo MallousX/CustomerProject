@@ -13,17 +13,17 @@
         public DateTime CreateDT { get; }
 
         // Constructor
-        public Customer(string firstName, string lastName, string email, PhoneModel? phoneNumber, int age)
+        public Customer(string firstName, string lastName, string email,  string phoneNumber, int age)
         {
             FirstName = FormatName(firstName);
             LastName = FormatName(lastName);
             Email = email;
-            PhoneNumber = phoneNumber;
+            PhoneNumber = new PhoneModel(phoneNumber);
             IsCustomerLegal(age); 
             CreateDT = DateTime.Now;
         }
 
-
+        
         //Functions
         public string FormatName(string input)
         {
