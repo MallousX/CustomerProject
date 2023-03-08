@@ -9,7 +9,7 @@
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string? Email { get; set; }
-        public List<PhoneModel>? PhoneNumbers { get; set; }
+        public List<PhoneModel>? PhoneNumbers { get; set; } = new List<PhoneModel>();
         public int Age { get; set; }
         public DateTime CreateDT { get; }
 
@@ -44,6 +44,21 @@
             {
                 Console.WriteLine("User is not at least 18 years of age");
                 throw new ArgumentException("User is not at least 18 years of age");
+            }
+        }
+
+        public void AddPhoneNumber(string phoneNumber, string phoneType)
+        {
+            {
+                // Create a new phone number
+                PhoneModel newPhoneNumber = new PhoneModel
+                {
+                    PhoneNumber = phoneNumber,
+                    PhoneType = phoneType
+                };
+
+                // Add it to the list
+                PhoneNumbers.Add(newPhoneNumber);
             }
         }
 
