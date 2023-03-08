@@ -5,25 +5,27 @@
         // define a customer
 
         // Data Fields
+        public int Id { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string? Email { get; set; }
-        public PhoneModel? PhoneNumber { get; set; }
+        public List<PhoneModel>? PhoneNumbers { get; set; }
         public int Age { get; set; }
         public DateTime CreateDT { get; }
 
         // Constructor
-        public Customer(string firstName, string lastName, string email,  string phoneNumber, int age)
+        public Customer(int id, string firstName, string lastName, string email, int age)
         {
+            Id = id;
             FirstName = FormatName(firstName);
             LastName = FormatName(lastName);
             Email = email;
-            PhoneNumber = new PhoneModel(phoneNumber);
-            IsCustomerLegal(age); 
+            PhoneNumbers = new List<PhoneModel>();
+            IsCustomerLegal(age);
             CreateDT = DateTime.Now;
         }
 
-        
+
         //Functions
         public string FormatName(string input)
         {
@@ -31,7 +33,7 @@
             return char.ToUpper(input[0]) + input.Substring(1);
         }
 
-        public void IsCustomerLegal (int age)
+        public void IsCustomerLegal(int age)
         {
             if (age >= 18)
             {
@@ -51,7 +53,11 @@
             Console.WriteLine($"Name: {FirstName} {LastName}");
             Console.WriteLine($"Age: {Age}");
             Console.WriteLine($"Email: {Email}");
-            Console.WriteLine($"Phone Number: {PhoneNumber.PhoneNumber}");
+            foreach (PhoneModel number in PhoneNumbers)
+            {
+                Console.WriteLine($"Phone Number: {number.PhoneNumber}");
+            }
+
             Console.WriteLine($"Created At: {CreateDT}\n");
         }
     }

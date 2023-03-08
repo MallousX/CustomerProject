@@ -26,7 +26,7 @@ class Program
         //    PhoneNumber = new PhoneModel("2816517827")
         //};
 
-        Customer mallous = new Customer("james", "reeves", "truewinds@gmail.com", "2816517827", 21);
+        Customer mallous = new Customer(1,"james", "reeves", "truewinds@gmail.com", 21);
 
 
         // Print Customers

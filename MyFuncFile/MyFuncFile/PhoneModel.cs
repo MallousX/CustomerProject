@@ -3,11 +3,17 @@
     public class PhoneModel
     {
         //DataFields
+        public int Id { get; set; }
+        public int UserId { get; set; }
         public string? PhoneNumber { get; }
+        public string PhoneType { get; set; }
 
         //Constructor
-        public PhoneModel(string inputPhoneNumber)
+        public PhoneModel(int id, int userId, string inputPhoneNumber, string phoneType)
         {
+            Id = id;
+            UserId = userId;
+            PhoneType = phoneType;
             PhoneNumber = FormatPhoneNumber(inputPhoneNumber);
         }
 
