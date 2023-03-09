@@ -9,9 +9,9 @@
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string? Email { get; set; }
-        public List<PhoneModel>? PhoneNumbers { get; set; } = new List<PhoneModel>();
+        public List<PhoneModel> PhoneNumbers { get; set; } = new List<PhoneModel>();
         public int Age { get; set; }
-        public DateTime CreateDT { get; }
+        public DateTime CreateDT { get; } = DateTime.Now;
 
         // Constructor
         public Customer(int id, string firstName, string lastName, string email, int age)
@@ -20,9 +20,7 @@
             FirstName = FormatName(firstName);
             LastName = FormatName(lastName);
             Email = email;
-            PhoneNumbers = new List<PhoneModel>();
             IsCustomerLegal(age);
-            CreateDT = DateTime.Now;
         }
 
 
@@ -51,11 +49,7 @@
         {
             {
                 // Create a new phone number
-                PhoneModel newPhoneNumber = new PhoneModel
-                {
-                    PhoneNumber = phoneNumber,
-                    PhoneType = phoneType
-                };
+                PhoneModel newPhoneNumber = new PhoneModel(1, 1, phoneNumber, phoneType);
 
                 // Add it to the list
                 PhoneNumbers.Add(newPhoneNumber);
@@ -70,7 +64,7 @@
             Console.WriteLine($"Email: {Email}");
             foreach (PhoneModel number in PhoneNumbers)
             {
-                Console.WriteLine($"Phone Number: {number.PhoneNumber}");
+                Console.WriteLine($"{number.PhoneType} Number: {number.PhoneNumber}");
             }
 
             Console.WriteLine($"Created At: {CreateDT}\n");

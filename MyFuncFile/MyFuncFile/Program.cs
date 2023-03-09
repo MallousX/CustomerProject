@@ -28,6 +28,8 @@ class Program
 
         Customer mallous = new Customer(1,"james", "reeves", "truewinds@gmail.com", 21);
 
+        mallous.AddPhoneNumber("2816517827", "Cell");
+        mallous.AddPhoneNumber("5555555555", "Hooker");
 
         // Print Customers
         mallous.PrintCustomerData();
