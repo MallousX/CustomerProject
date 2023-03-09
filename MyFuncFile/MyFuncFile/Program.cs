@@ -4,10 +4,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        //var blah = new Funcs();
-        //blah.GetformattedDate();
-        //Console.WriteLine(blah.GetformattedDate());
-
         //Customer customer = new Customer
         //{
         //    FirstName = "james",
@@ -17,23 +13,27 @@ class Program
         //    PhoneNumber = new PhoneModel("2816517827")
         //};
 
-        //Customer customer2 = new Customer
-        //{
-        //    FirstName = "matt",
-        //    LastName = "dove",
-        //    Age = 37,
-        //    Email = "matt319899@gmail.com",
-        //    PhoneNumber = new PhoneModel("2816517827")
-        //};
-
+        // CRUD = Create, Read, Update, Delete
+        // We need to code the rest of this for a Customer object
+        
+        // Create Customer
         Customer mallous = new Customer(1,"james", "reeves", "truewinds@gmail.com", 21);
 
-        mallous.AddPhoneNumber("2816517827", "Cell");
-        mallous.AddPhoneNumber("5555555555", "Hooker");
-        mallous.AddAdress("1010 Bush","Houston", "Texas", "77090" );
+        mallous.AddPhoneNumber(1, "2816517827", "Cell");
+        mallous.AddPhoneNumber(2, "5555555555", "Hooker");
 
-        // Print Customers
+        // Commenting this out to cause the code to break
+        // homework to fix the beak
+        //mallous.AddAddress("1010 Bush","Houston", "Texas", "77090" );
+
+        // Update the customer email address
+
+        // Read Customers
         mallous.PrintCustomerData();
-        //customer2.PrintCustomerData();
+
+        // Delete Phone Number
+
+        // Read Customer Again
+
     }
 }
