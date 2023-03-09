@@ -9,6 +9,7 @@
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string? Email { get; set; }
+        public Address? Address { get; set; }
         public List<PhoneModel> PhoneNumbers { get; set; } = new List<PhoneModel>();
         public int Age { get; set; }
         public DateTime CreateDT { get; } = DateTime.Now;
@@ -25,6 +26,21 @@
 
 
         //Functions
+
+        public void AddAdress(string street, string city, string state, string postalCode)
+        {
+            //create a new address
+            Address address = new Address
+            {
+                Street = street,
+                City = city,
+                State = state,
+                PostalCode = postalCode
+
+            };
+            //add it to the customer
+            Address = address;
+        } 
         public string FormatName(string input)
         {
             // Capitalize the first letter of each word
@@ -62,6 +78,7 @@
             Console.WriteLine($"Name: {FirstName} {LastName}");
             Console.WriteLine($"Age: {Age}");
             Console.WriteLine($"Email: {Email}");
+            Console.WriteLine($"{Address.Street}\n{Address.City} {Address.State}, {Address.PostalCode} ");
             foreach (PhoneModel number in PhoneNumbers)
             {
                 Console.WriteLine($"{number.PhoneType} Number: {number.PhoneNumber}");

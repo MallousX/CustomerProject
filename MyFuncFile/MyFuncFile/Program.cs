@@ -30,6 +30,7 @@ class Program
 
         mallous.AddPhoneNumber("2816517827", "Cell");
         mallous.AddPhoneNumber("5555555555", "Hooker");
+        mallous.AddAdress("1010 Bush","Houston", "Texas", "77090" );
 
         // Print Customers
         mallous.PrintCustomerData();
