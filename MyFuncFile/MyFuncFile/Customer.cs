@@ -1,11 +1,8 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
-
+﻿
 namespace MyFuncFile
 {
     public class Customer
     {
-        // define a customer
-
         // Data Fields
         public int Id { get; set; }
         public string? FirstName { get; set; }
@@ -25,7 +22,6 @@ namespace MyFuncFile
             Email = email;
             IsCustomerLegal(age);
         }
-
 
         //Functions
 
@@ -97,15 +93,12 @@ namespace MyFuncFile
 
         public void UpdateEmail(string email)
         {
-            Email = email; // set the new email here... yeah that's it
+            Email = email;
         }
 
         public void DeletePhoneNumber(int phoneID)
         {
             // Delete the phone number that matches the id
-
-            // go look up a search algorithm yay!
-            //delete phone number where id = phone number id
             foreach (PhoneModel number in PhoneNumbers)
             {
                 if (number.Id == phoneID)

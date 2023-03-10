@@ -22,19 +22,17 @@ class Program
         mallous.AddPhoneNumber(1, "2816517827", "Cell");
         mallous.AddPhoneNumber(2, "5555555555", "Hooker");
 
-        // Commenting this out to cause the code to break
-        // homework to fix the beak
         mallous.AddAddress("1010 Bush", "Houston", "Texas", "77090");
 
         // Update the customer email address
 
         // Read Customers
         mallous.PrintCustomerData();
-        mallous.DeletePhoneNumber(2);
-        mallous.PrintCustomerData();
+        
         // Delete Phone Number
-
+        mallous.DeletePhoneNumber(2);
+                
         // Read Customer Again
-
+        mallous.PrintCustomerData();
     }
 }
