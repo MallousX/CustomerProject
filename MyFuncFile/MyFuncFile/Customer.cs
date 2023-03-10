@@ -1,4 +1,6 @@
-﻿namespace MyFuncFile
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace MyFuncFile
 {
     public class Customer
     {
@@ -41,7 +43,7 @@
 
             //add it to the customer
             Address = address;
-        } 
+        }
         public string FormatName(string input)
         {
             // Capitalize the first letter of each word
@@ -80,14 +82,14 @@
             Console.WriteLine($"Age: {Age}");
             Console.WriteLine($"Email: {Email}");
 
-            // There's an error here if a customer does not have an address.
-            // We need to wrap this line inside an if statement
-            // that does a null check. if (Address is not null) { }
-            Console.WriteLine($"{Address.Street}\n{Address.City} {Address.State}, {Address.PostalCode} ");
-                        
+            if (Address is not null)
+            {
+                Console.WriteLine($"{Address.Street}\n{Address.City} {Address.State}, {Address.PostalCode} ");
+            }
+
             foreach (PhoneModel number in PhoneNumbers)
             {
-                Console.WriteLine($"{number.PhoneType} Number: {number.PhoneNumber}");
+                Console.WriteLine($"Id:{number.Id} {number.PhoneType} Number: {number.PhoneNumber}");
             }
 
             Console.WriteLine($"Created At: {CreateDT}\n");
@@ -95,13 +97,24 @@
 
         public void UpdateEmail(string email)
         {
-            // set the new email here... yeah that's it
+            Email = email; // set the new email here... yeah that's it
         }
 
         public void DeletePhoneNumber(int phoneID)
         {
             // Delete the phone number that matches the id
+
             // go look up a search algorithm yay!
+            //delete phone number where id = phone number id
+            foreach (PhoneModel number in PhoneNumbers)
+            {
+                if (number.Id == phoneID)
+                {
+                    Console.WriteLine("Found it");
+                    PhoneNumbers.Remove(number);
+                    return;
+                }
+            }
         }
     }
 
